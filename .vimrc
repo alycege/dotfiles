@@ -89,7 +89,9 @@ set wildignore=*.o,*~,*.pyc
 set ruler
 
 " Show line numbers
-set number
+" set number
+" I prefer seeing relative numbers
+set relativenumber
 
 " Height of the command bar
 set cmdheight=2

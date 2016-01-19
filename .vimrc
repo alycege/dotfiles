@@ -89,8 +89,9 @@ set wildignore=*.o,*~,*.pyc
 set ruler
 
 " Show line numbers
-" set number
-" I prefer seeing relative numbers
+" Setting number with relativenumber causes the current line to have absolute
+" line number while all other numbers are relative
+set number
 set relativenumber
 
 " Height of the command bar

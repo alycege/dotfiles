@@ -10,29 +10,19 @@
 set nocompatible
 filetype off
 
-" execute pathogen#infect()
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-" List all plugins
-Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-commentary'
-Plugin 'bling/vim-airline'
-Plugin 'kien/ctrlp.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'JuliaLang/julia-vim'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'ervandew/supertab'
-"Plugin 'Valloric/YouCompleteMe'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
+Plug 'bling/vim-airline'
+Plug 'kien/ctrlp.vim'
 
-" All plugins must be listed before this line
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 
 " Tells vim to source .vimrc if present in working directory

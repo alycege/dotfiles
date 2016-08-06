@@ -55,11 +55,6 @@ let g:mapleader = ","
 " Fast saving
 nmap <leader>w :w!<cr>
 
-"filetype indent on
-"filetype plugin on
-"
-set nocompatible
-
 " Recommended newbie options for Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -98,7 +93,7 @@ set relativenumber
 set cmdheight=2
 
 " A buffer becomes hidden when it is abandoned
-set hid
+set hidden
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
@@ -112,6 +107,9 @@ set smartcase
 
 " Highlight search results
 set hlsearch
+
+" Turns on global line substitution by default
+set gdefault
 
 " Makes search act like search in modern browsers
 set incsearch
@@ -150,7 +148,7 @@ set guifont=Inconsolata\ 12
 "set guifont=InputMono-Medium\ 12
 
 " Set utf8 as standard encoding and en_US as standard language
-set encoding=utf8
+set encoding=utf-8
 
 " Use unix as the standard file type
 set ffs=unix,dos,mac
@@ -190,9 +188,9 @@ autocmd Filetype julia setlocal ts=4 sw=4 expandtab
 set lbr
 "set tw=500
 
-set ai "Auto indent
-set si "Smart indent
-set nowrap "wrap lines
+set ai      " Auto indent
+set si      " Smart indent
+set nowrap  " wrap lines
 
 
 " Enable folding
@@ -212,29 +210,41 @@ set nowrap "wrap lines
 " -> Visual mode related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Visual mode pressing * or # searches for the current selection
-vnoremap <silent> * :call VisualSelection('f')<CR>
-vnoremap <silent> # :call VisualSelection('b')<CR>
+vnoremap <silent> * :call VisualSelection('f')<cr>
+vnoremap <silent> # :call VisualSelection('b')<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Treat long lines as break lines (useful when moving around in them)
-map j gj
-map k gk
+nnoremap j gj
+nnoremap k gk
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> /
-map <c-space> ?
+noremap <space> /
+noremap <c-space> ?
 
-" Disable highlight when <leader><cr> is pressed
-map <silent> <leader><cr> :noh<cr>
+"Disable highlight
+nnoremap <leader><space> :noh<cr>
+
+" Fix Vim regex
+nnoremap / /\v
+vnoremap / /\v
+
+" Selects last pasted text
+nnoremap <leader>v V`]
+
+" Get rid of help
+inoremap <f1> <esc>
+nnoremap <f1> <esc>
+vnoremap <f1> <esc>
 
 " Smart way to move between windows
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-h> <C-w>h
-map <C-l> <C-w>l
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-h> <c-w>h
+map <c-l> <c-w>l
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>
@@ -292,7 +302,7 @@ let g:EasyMotion_smartcase = 1
 map <leader>z <Plug>(easymotion-w)
 
 " Map Enter to do nothing because it's annoying otherwise
-map <enter> <Nop>
+map <enter> <nop>
 
 " Toggle spelling
 map <silent> <leader>m :call SpellToggle()<cr>
@@ -304,7 +314,7 @@ map <silent> <leader>m :call SpellToggle()<cr>
 " Always show the status line
 nnoremap Q @q
 
-nnoremap K i<cr><Esc>==
+nnoremap K i<cr><esc>==
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -320,7 +330,7 @@ set laststatus=2
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-inoremap jk <esc>l
+inoremap jk <esc>
 
 "autocmd BufNewFile,BufReadPost,FilterReadPost,FileReadPost * :call SyntasticToggleMode()
 

@@ -58,7 +58,7 @@ nmap <leader>w :w!<cr>
 "filetype indent on
 "filetype plugin on
 "
-"set nocp
+set nocompatible
 
 " Recommended newbie options for Syntastic
 set statusline+=%#warningmsg#
@@ -167,8 +167,6 @@ set ffs=unix,dos,mac
 set nobackup
 set nowb
 set noswapfile
-
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Text, tab and indent related
@@ -322,6 +320,7 @@ set laststatus=2
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+inoremap jk <esc>l
 
 "autocmd BufNewFile,BufReadPost,FilterReadPost,FileReadPost * :call SyntasticToggleMode()
 

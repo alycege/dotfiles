@@ -194,7 +194,7 @@ set lbr
 
 set ai "Auto indent
 set si "Smart indent
-set wrap "wrap lines
+set nowrap "wrap lines
 
 
 " Enable folding
@@ -298,6 +298,15 @@ map <enter> <Nop>
 
 " Toggle spelling
 map <silent> <leader>m :call SpellToggle()<cr>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" -> Remappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Always show the status line
+nnoremap Q @q
+
+nnoremap K i<cr><Esc>==
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""

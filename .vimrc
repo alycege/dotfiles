@@ -14,13 +14,13 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
-Plug 'Lokaltog/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'bling/vim-airline'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 filetype plugin indent on
@@ -289,7 +289,7 @@ nmap s <Plug>(easymotion-s)
 let g:EasyMotion_smartcase = 1
 
 " Search forward
-map <leader>z <Plug>(easymotion-w)
+map <leader>z <Plug>(easymotion-bd-w)
 
 " Map Enter to do nothing because it's annoying otherwise
 map <enter> <nop>

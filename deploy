@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+export deploy_directory="$HOME/dotfiles"
+
+cat curated_files.txt | grep -v "\#.*" | xargs -n 1 -I {} sh -c 'echo "Deploying {}"; cp $deploy_directory/{} $HOME/{}'
+

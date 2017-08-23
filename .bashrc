@@ -5,6 +5,10 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+if [ -f ~/.bash_aliases ]; then
+	. ~/.bash_aliases
+fi
+
 # Change the prompt to something that I like
 # Replace 0 with 1 for dark color
 # Black 0;30 - Blue 0;34 - Green 0;32 - Cyan 0;36 - Red 0;31
@@ -14,6 +18,8 @@ green=$(tput setaf 2)
 reset=$(tput sgr0)
 PS1='\[$green\]\u@\h \W $ \[$reset\]'
 export PS1
+
+export EDITOR=vim
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=

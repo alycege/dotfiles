@@ -1,13 +1,33 @@
 
+alias ll="ls -AlFh --group-directories-first"
 
 # Git bash aliases
 alias gs="git status"
-alias gss="git status --short"
+alias gss="git status --short --branch"
 alias gd="git diff"
 alias gds="git diff --staged"
+alias gls="git lg --stat -n 10"
 
-alias julia-dev="/opt/julia/julia-0.6.0/julia"
+# Navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 
+# Resource environment
 alias src="source ~/.bashrc"
 
 alias vimr="vim -R"
+
+# Miscellaneous
+alias tree="tree -Ch"
+alias rm="rm -i"
+# alias cp="cp -i"
+alias mv="mv -i"
+alias h="history"
+alias j="jobs -l"
+alias wget="wget -c"
+alias which="which -a"
+
+alias julia-dev="/opt/julia/julia-0.6.0/julia"
+

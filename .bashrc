@@ -33,6 +33,10 @@ export PS1
 
 export EDITOR=vim
 
+if [ -z "$HISTTIMEFORMAT" ]; then
+    export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S %z "
+fi
+
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
@@ -59,5 +63,9 @@ function up() {
     do
         cd ..
     done
+}
+
+function psa() {
+    ps -F -u $1 --forest
 }
 

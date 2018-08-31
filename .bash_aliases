@@ -14,6 +14,8 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
+alias shrug="echo -n '¯\_(ツ)_/¯'"
+
 # Resource environment
 alias src="source ~/.bashrc"
 
@@ -28,6 +30,8 @@ alias h="history"
 alias j="jobs -l"
 alias wget="wget -c"
 alias which="which -a"
+alias less="less -r -x4 -W"
+alias diff="colordiff --side-by-side --suppress-common-lines"
 
 alias julia-dev="/opt/julia/julia-0.6.0/julia"
 

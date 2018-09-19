@@ -8,8 +8,7 @@
 "
 " Blog_post:
 "       http://amix.dk/blog/post/19691#The-ultimate-Vim-configuration-on-Github
-"
-" Awesome_version:
+" " Awesome_version:
 "       Get this config, nice color schemes and lots of plugins!
 "
 "       Install the awesome version from:
@@ -39,6 +38,8 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+set runtimepath=~/.vim,$VIMRUNTIME
+
 set nocompatible
 
 filetype off
@@ -53,6 +54,7 @@ Plug 'godlygeek/tabular'
 " Plug 'honza/vim-snippets'
 " Plug 'SirVer/ultisnips'
 Plug 'kana/vim-operator-user'
+Plug 'machakann/vim-highlightedyank'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'mileszs/ack.vim'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -71,10 +73,12 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'terryma/vim-expand-region'
 Plug 'majutsushi/tagbar'
 Plug 'raimondi/delimitmate'
+Plug 'bfrg/vim-cpp-modern'
 
 " Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
+
 filetype plugin indent on
 
 set modelines=0
@@ -137,13 +141,13 @@ set updatetime=250
 
 " YouCompleteMe
 " Disable YouCompleteMe on startup - comment out to enable
-" let g:loaded_youcompleteme = 1
-nnoremap <F5> :YcmForceCompileAndDiagnostic<cr>
-nnoremap <F6> :YcmShowDetailedDiagnostic<cr>
-nnoremap <leader>fx :YcmCompleter FixIt<cr>
-let g:ycm_warning_symbol = 'w'
-let g:ycm_error_symbol = 'x'
-let g:ycm_autoclose_preview_window_after_completion = 1
+let g:loaded_youcompleteme = 1
+" nnoremap <F5> :YcmForceCompileAndDiagnostic<cr>
+" nnoremap <F6> :YcmShowDetailedDiagnostic<cr>
+" nnoremap <leader>fx :YcmCompleter FixIt<cr>
+" let g:ycm_warning_symbol = 'w'
+" let g:ycm_error_symbol = 'x'
+" let g:ycm_autoclose_preview_window_after_completion = 1
 
 " ExpandRegion
 " FIXME(afrazer): How should I fix this
@@ -254,7 +258,7 @@ set ttyfast
 syntax enable
 
 " colorscheme delek
-" set background=dark
+set background=dark
 color dracula
 
 " Set extra options when running in GUI mode
@@ -275,7 +279,7 @@ set fileformats=unix,dos,mac
 autocmd BufRead,BufNewFile *.cfg set filetype=python
 
 " C++ Syntax
-autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab syntax=cpp11
+autocmd FileType hpp,cpp setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab syntax=cpp
 autocmd FileType c,cpp setlocal commentstring=//\ %s
 
 " CMake Syntax
@@ -479,6 +483,7 @@ autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
 autocmd BufWrite *.cpp :call DeleteTrailingWS()
 autocmd BufWrite *.hpp :call DeleteTrailingWS()
+autocmd BufWrite *.ml :call DeleteTrailingWS()
 
 " Get rid of whitespace explicitly
 nnoremap <leader>W :call DeleteTrailingWS()<cr>
@@ -632,5 +637,4 @@ command! DiffSaved call <SID>DiffWithSaved()
 
 " XXX(afrazer): Should I use a snippts plugin for this??
 let @n='OdummyjkgccwCXXX(afrazer): '
-
 

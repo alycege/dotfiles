@@ -28,7 +28,7 @@ fi
 green=$(tput setaf 2)
 reset=$(tput sgr0)
 # PS1='\[$green\]\u@\h \W $ \[$reset\]'
-PS1='[\[$green\]\u@\h \W$(__git_ps1 " (%s)")\[$reset\]] \n\$ '
+PS1='[\[$green\]\u@\h \w$(__git_ps1 " (%s)")\[$reset\]] \n\$ '
 export PS1
 
 export EDITOR=vim
@@ -44,7 +44,8 @@ fi
 MAIL=/var/spool/mail/alex
 export MAIL
 
-eval `opam config env`
+# Enable opam
+# eval `opam config env`
 
 # Functions
 # Stand-in for cd, changes to $argument and then ls's the new directory
@@ -67,5 +68,12 @@ function up() {
 
 function psa() {
     ps -F -u $1 --forest
+}
+
+function work-on() {
+    local env=$1
+    if [ "$env" = "conda" ]; then
+        source ~/.bashrc.conda
+    fi
 }
 

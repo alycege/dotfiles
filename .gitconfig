@@ -1,7 +1,7 @@
 # This is Git's per-user configuration file.
 [user]
-    name = Alexander Frazer
-    email = alexfrazer11@gmail.com
+    name = Alyce Ge 
+    email = alyce.ge@gmail.com 
 
 [alias]
     lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"

@@ -33,5 +33,3 @@ alias which="which -a"
 alias less="less -r -x4 -W"
 alias diff="colordiff --side-by-side --suppress-common-lines"
 
-alias julia-dev="/opt/julia/julia-0.6.0/julia"
-

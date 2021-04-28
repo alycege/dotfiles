@@ -259,7 +259,7 @@ syntax enable
 
 " colorscheme delek
 set background=dark
-color dracula
+color slate
 
 " Set extra options when running in GUI mode
 if has("gui_running")
